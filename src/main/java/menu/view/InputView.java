@@ -7,9 +7,9 @@ import menu.validator.InputValidator;
 
 public class InputView {
     private final InputValidator inputValidator = new InputValidator();
-    public List<String> getCoachNames(){
+    public List<String> getCoachNames() {
         String inputValue = Console.readLine();
-        inputValidator.coachNameValidator(Arrays.asList(inputValue.split(",")));
-        return Arrays.asList(inputValue.split(","));
+        inputValidator.coachNameValidator(inputValue);
+        return inputValidator.coachNameValidator(inputValue);
     }
 }
