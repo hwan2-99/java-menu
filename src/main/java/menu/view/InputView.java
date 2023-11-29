@@ -7,9 +7,16 @@ import menu.validator.InputValidator;
 
 public class InputView {
     private final InputValidator inputValidator = new InputValidator();
+
     public List<String> getCoachNames() {
-        String inputValue = Console.readLine();
-        inputValidator.coachNameValidator(inputValue);
-        return inputValidator.coachNameValidator(inputValue);
+        while (true) {
+            try {
+                String inputValue = Console.readLine();
+                inputValidator.coachNameValidator(inputValue);
+                return inputValidator.coachNameValidator(inputValue);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 }
