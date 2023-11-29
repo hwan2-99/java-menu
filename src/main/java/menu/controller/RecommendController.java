@@ -1,14 +1,12 @@
 package menu.controller;
 
-import java.util.List;
-import menu.view.InputView;
+
+import menu.service.InputService;
 
 public class RecommendController {
-    private InputView inputView = new InputView();
-    public void run(){
-        List<String> coaches = inputView.getCoachNames();
-        for (String coach : coaches) {
-            System.out.println(coach);
-        }
+    private final InputService inputService = new InputService();
+
+    public void run() {
+        inputService.getCoaches();
     }
 }
