@@ -11,6 +11,10 @@ public class InputValidator {
         coachNamesDigitValidator(coachName);
         return coachName;
     }
+    public List<String> notEatFoodsValidator(String inputValue){
+        List<String> notEatFoods = notEatFoodCountValidator(inputValue);
+        return notEatFoods;
+    }
     private void coachNamesDigitValidator(List<String> coachName) {
         for(String coach : coachName){
             if(DomainCondition.isIncorrectNameDigit(coach)){
@@ -24,5 +28,12 @@ public class InputValidator {
             throw new IllegalArgumentException(ErrorMessage.COACH_COUNT_ERROR.getMessage());
         }
         return coachNames;
+    }
+    private List<String> notEatFoodCountValidator(String inputValue){
+        List<String> notEatFoods = Arrays.asList(inputValue.split(","));
+        if(DomainCondition.isIncorrectFoodsCount(notEatFoods)){
+            throw new IllegalArgumentException();
+        }
+        return notEatFoods;
     }
 }

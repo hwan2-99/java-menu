@@ -1,6 +1,7 @@
 package menu.controller;
 
 
+import java.util.List;
 import menu.service.InputService;
 
 public class RecommendController {
@@ -8,5 +9,9 @@ public class RecommendController {
 
     public void run() {
         inputService.getCoaches();
+        List<String> food = inputService.getNotEatFoods();
+        for(String name : food){
+            System.out.println(name);
+        }
     }
 }
