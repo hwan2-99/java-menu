@@ -10,7 +10,13 @@ public class InputService {
     private final OutputView outputView = new OutputView();
     public List<String> getCoaches(){
         outputView.printMessage(InputMessage.GET_COACHES.getMessage());
-        return inputView.getCoachNames();
+        while (true){
+            try {
+                return inputView.getCoachNames();
+            }catch (IllegalArgumentException e){
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
 }
