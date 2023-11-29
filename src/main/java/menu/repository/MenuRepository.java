@@ -11,4 +11,7 @@ public class MenuRepository {
     public void save(Category category, List<String> menuNames) {
         menuStorage.put(category, menuNames);
     }
+    public List<String> findMenuByCategory(Category findCategory) {
+        return menuStorage.get(findCategory);
+    }
 }

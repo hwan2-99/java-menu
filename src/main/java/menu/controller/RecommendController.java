@@ -14,9 +14,7 @@ public class RecommendController {
 
     public void run() {
         inputService.getCoaches();
-        List<String> food = inputService.getNotEatFoods();
-        for(String name : food){
-            System.out.println(name);
-        }
+        inputService.getNotEatFoods();
+
     }
 }
